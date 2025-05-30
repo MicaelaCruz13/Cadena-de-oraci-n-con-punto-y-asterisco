@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <string.h>
+	
+	int main() {
+	char cadena[500];
+	
+	// Solicitar la cadena al usuario
+	printf("Introduce el párrafo con palabras separadas por '*' y oraciones por '.':\n");
+	scanf("%[^\n]", cadena); // Leer toda la línea
+	
+	// Recorrer la cadena y reemplazar los delimitadores
+	for (int i = 0; i < strlen(cadena); i++) {
+		if (cadena[i] == '*') {
+			cadena[i] = ' ';  // Convertir '*' en espacio
+		} else if (cadena[i] == '.') {
+			cadena[i] = '\n'; // Convertir '.' en salto de línea
+		}
+	}
+	
+	// Imprimir el párrafo con las oraciones en líneas separadas
+	printf("\nTexto formateado:\n%s\n", cadena);
+	
+	return 0;
+}
